@@ -1,6 +1,6 @@
 ## Core of the Experiment: main.py,where and the core functions are main() and main_test()
 
-To use all models completely, you need to download [joern][https://github.com/joernio/joern].
+To use all models completely, you need to download joern(https://github.com/joernio/joern).
 
 - `main()`: This function is primarily used for model training and saving results. It calls the training methods for all models.
 - `main_test()`: This function is primarily used to test the trained models on the crossover dataset and save the results. It calls the testing methods for all models.
@@ -27,7 +27,7 @@ The result_analyse.ipynb notebook provides sample code for analyzing the results
 
 ### VulCNN:
 
-- Refer to the open-source code of VulCNN (https://gitee.com/QISANSAN/vulcnn).
+- Refer to the open-source code of VulCNN(https://gitee.com/QISANSAN/vulcnn).
 
 ### VulBERTa:
 
