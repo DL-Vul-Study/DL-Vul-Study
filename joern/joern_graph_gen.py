@@ -136,12 +136,12 @@ def main(input_path, output_path, type, repr):
         print('Type error!')    
 
 if __name__ == '__main__':
-    joern_path = '/root/data/qm_data/devign/joern/joern-cli/'
+    joern_path = '/joern/joern-cli/'
     os.chdir(joern_path)
-    input_root_path = "/root/data/qm_data/issta2022/test/source_code/"
-    output_bin_path = "/root/data/qm_data/issta2022/test/joren/bins/"
-    output_pdg_path = "/root/data/qm_data/issta2022/test/joren/pdgs/"
-    output_ast_path = "/root/data/qm_data/issta2022/test/joren/asts/"
+    input_root_path = "../test/source_code/"
+    output_bin_path = "../test/joren/bins/"
+    output_pdg_path = "../test/joren/pdgs/"
+    output_ast_path = "../test/joren/asts/"
     to_test_dir = ["sub_original_dataset"]
     # to_test_dir = ["new_original_dataset", "sub_original_dataset"]
     for dir in to_test_dir:

@@ -128,8 +128,8 @@ def dataset_generation(INPUT_PATH, OUTPUT_PATH, DATASET, dataset_type):
                     examples.append(example)
                 line = line + ' '.join(examples)
                 f.write(line + '\n')
-    # train_all = load_data("/root/data/qm_data/issta2022/data/pkl/original_dataset/" + DATASET + "/train.pkl")
-    # test_all = load_data("/root/data/qm_data/issta2022/data/pkl/original_dataset/" + DATASET +"/test.pkl")
+    # train_all = load_data("./issta2022/data/pkl/original_dataset/" + DATASET + "/train.pkl")
+    # test_all = load_data("./issta2022/data/pkl/original_dataset/" + DATASET +"/test.pkl")
     # train_tem = {}
     # test_tem = {}
     # for cnt in range(10):
@@ -163,14 +163,14 @@ def split_data(source_path, save_path):
 
 def main():
     # 这俩是将数据划分为10000个一组用的
-    # source_path = "/root/data/qm_data/issta2022/data/source_code"
+    # source_path = "./issta2022/data/source_code"
     # save_path = "/root/data/code2vec/source_code"
 
     # 这俩是将astminer的数据整合起来用的
     source_path = "/root/data/code2vec/data"
-    # save_path = "/root/data/qm_data/code2vec/data_final"
-    save_path = "/root/data/qm_data/code2vec/data_2"
-    # save_path = "/root/data/qm_data/issta2022/data/pkl/code2vec"
+    # save_path = "./code2vec/data_final"
+    save_path = "./code2vec/data_2"
+    # save_path = "./issta2022/data/pkl/code2vec"
     for dataset_type in["sub_mutation_dataset"]:
     # for dataset_type in["sub_original_dataset", "sub_mutation_dataset"]:
         for file_val in ["qemu", "reveal"]:

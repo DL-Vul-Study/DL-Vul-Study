@@ -133,12 +133,12 @@ def main():
     # parser.add_argument('--output_dir', type=str, help='Output Directory of the parser',default='/home/test2/')
     # args = parser.parse_args()
 
-    dir_path_list = ["/root/data/qm_data/issta2022/data/joren/new_pdgs/sub_original_dataset/ffmpeg",
-    "/root/data/qm_data/issta2022/data/joren/new_pdgs/sub_original_dataset/qemu",
-    "/root/data/qm_data/issta2022/data/joren/new_pdgs/sub_original_dataset/reveal",
-    "/root/data/qm_data/issta2022/data/joren/new_pdgs/sub_mutation_dataset/ffmpeg",
-    "/root/data/qm_data/issta2022/data/joren/new_pdgs/sub_mutation_dataset/qemu",
-    "/root/data/qm_data/issta2022/data/joren/new_pdgs/sub_mutation_dataset/reveal"]
+    dir_path_list = ["../data/joren/new_pdgs/sub_original_dataset/ffmpeg",
+    "../data/joren/new_pdgs/sub_original_dataset/qemu",
+    "../data/joren/new_pdgs/sub_original_dataset/reveal",
+    "../data/joren/new_pdgs/sub_mutation_dataset/ffmpeg",
+    "../data/joren/new_pdgs/sub_mutation_dataset/qemu",
+    "../data/joren/new_pdgs/sub_mutation_dataset/reveal"]
     
     
     # dots = []
@@ -148,7 +148,7 @@ def main():
             os.makedirs(out_path)
         dir_path = dir_path + "/" if dir_path[-1] != "/" else dir_path
         dots = glob.glob(dir_path + '*.dot')
-        word_vectors = KeyedVectors.load('/root/data/qm_data/issta2022/data/word2vec_model/ori_mut_subcode_128.pkl', mmap='r')
+        word_vectors = KeyedVectors.load('../data/word2vec_model/ori_mut_subcode_128.pkl', mmap='r')
         pool = Pool(4)
         pool.map(partial(joern_to_devign, word_vectors=word_vectors, out_path=out_path), dots)
     #     dots_tmp = glob.glob(dir_path + '*.dot')
@@ -167,5 +167,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-
-# scp -P 52333 /root/data/qm_data/issta2022/data/word2vec_model/ori_subcode_128.pkl root@222.20.126.121:/home/ubuntu/issta2022/data/word2vec_model

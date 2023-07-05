@@ -100,8 +100,8 @@ def main(file):
     # args = parse_options()
     # dir_name = args.dir
     # out_path = args.out
-    dir_name = "/root/data/qm_data/issta2022/data/joren/new_asts/sub_mutation_dataset/" + file
-    out_path = "/root/data/qm_data/issta2022/data/joren/seqs/sub_mutation_dataset/" + file
+    dir_name = "./data/joren/new_asts/sub_mutation_dataset/" + file
+    out_path = "./data/joren/seqs/sub_mutation_dataset/" + file
     if dir_name[-1] == '/':
         dir_name = dir_name
     else:
@@ -129,8 +129,8 @@ def main(file):
     pool.map(partial(allseq, out_path=out_path, existing_files=existing_files), dotfiles)
 
 def generate_pkl(file):
-    in_path = "/root/data/qm_data/issta2022/data/joren/seqs/original_dataset/" + file
-    out_path = "/root/data/qm_data/issta2022/data/pkl/astgru/original_dataset/" + file
+    in_path = "./data/joren/seqs/original_dataset/" + file
+    out_path = "./data/pkl/astgru/original_dataset/" + file
     in_path = in_path + "/" if in_path[-1] !="/" else in_path
     out_path = out_path + "/" if out_path[-1] !="/" else out_path
     if not os.path.exists(out_path): os.makedirs(out_path)

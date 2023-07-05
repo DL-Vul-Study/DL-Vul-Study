@@ -28,7 +28,7 @@ def generate_ori_pkl_test(): # 废弃方法
         for filename in os.listdir(path + dirname):
             print(filename)
             file = path + dirname + "/" + filename
-            # file = "/mnt/qm_data/issta2022/data/source_code/original_dataset/qemu/1_qemu_13033.c"
+            # file = "./data/source_code/original_dataset/qemu/1_qemu_13033.c"
             if not os.path.exists(save_path + dirname + "/"): os.makedirs(save_path + dirname + "/")
             if not os.path.exists(save_path2 + dirname + "/"): os.makedirs(save_path2 + dirname + "/")
             if not os.path.exists(save_pkl + dirname): os.makedirs(save_pkl + dirname)
@@ -66,7 +66,7 @@ def generate_ori_pkl():  # 根据.c文件获取源代码和sub代码的汇总pkl
         for filename in os.listdir(path + dirname):
             print(filename)
             file = path + dirname + "/" + filename
-            # file = "/mnt/qm_data/issta2022/data/source_code/original_dataset/qemu/1_qemu_13033.c"
+            # file = "./data/source_code/original_dataset/qemu/1_qemu_13033.c"
             try:
                 f = open(file, 'r+', encoding='utf8')
                 code = f.read()
@@ -231,19 +231,23 @@ def generate_vulcnn_dataframe(): # vulcnn image generation的下一步处理
 
 def get_word2vec_model():# 训练word2vec模型
     # a1 = load_data("./data/pkl/original_dataset/sard/sard.pkl")
-    # a1 = load_data("./data/pkl/original_dataset/ffmpeg/ffmpeg_new.pkl")  # 这仨用于普通text
+    # 这仨用于普通text
+    # a1 = load_data("./data/pkl/original_dataset/ffmpeg/ffmpeg_new.pkl")  
     # a2 = load_data("./data/pkl/original_dataset/qemu/qemu_new.pkl")
     # a3 = load_data("./data/pkl/original_dataset/reveal/reveal_new.pkl")
     # a4 = load_data("./data/pkl/mutation_dataset/ffmpeg/ffmpeg_new.pkl")  
     # a5 = load_data("./data/pkl/mutation_dataset/qemu/qemu_new.pkl")
     # a6 = load_data("./data/pkl/mutation_dataset/reveal/reveal_new.pkl")
-    # a1 = load_data("./data/pkl/astgru/original_dataset/ffmpeg/ffmpeg.pkl")  # 这仨用于astgru
+    # 这仨用于astgru
+    # a1 = load_data("./data/pkl/astgru/original_dataset/ffmpeg/ffmpeg.pkl")  
     # a2 = load_data("./data/pkl/astgru/original_dataset/qemu/qemu.pkl")
     # a3 = load_data("./data/pkl/astgru/original_dataset/reveal/reveal.pkl")
-    a1 = load_data("./data/pkl/astgru/sub_original_dataset/ffmpeg/ffmpeg.pkl")  # 这仨用于astgru
+    # 这仨用于astgru
+    a1 = load_data("./data/pkl/astgru/sub_original_dataset/ffmpeg/ffmpeg.pkl")  
     a2 = load_data("./data/pkl/astgru/sub_original_dataset/qemu/qemu.pkl")
     a3 = load_data("./data/pkl/astgru/sub_original_dataset/reveal/reveal.pkl")
-    a4 = load_data("./data/pkl/astgru/sub_mutation_dataset/ffmpeg/ffmpeg.pkl")  # 这仨用于astgru
+    # 这仨用于astgru
+    a4 = load_data("./data/pkl/astgru/sub_mutation_dataset/ffmpeg/ffmpeg.pkl")  
     a5 = load_data("./data/pkl/astgru/sub_mutation_dataset/qemu/qemu.pkl")
     a6 = load_data("./data/pkl/astgru/sub_mutation_dataset/reveal/reveal.pkl")
 

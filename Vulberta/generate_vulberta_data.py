@@ -59,7 +59,7 @@ class MyTokenizer:
     def pre_tokenize(self, pretok: PreTokenizedString):
         pretok.split(self.clang_split)
 
-vocab, merges = BPE.read_file("/root/data/qm_data/VulBERTa/tokenizer/drapgh-vocab.json", "/root/data/qm_data/VulBERTa/tokenizer/drapgh-merges.txt")
+vocab, merges = BPE.read_file("./tokenizer/drapgh-vocab.json", "./tokenizer/drapgh-merges.txt")
 my_tokenizer = Tokenizer(BPE(vocab, merges, unk_token="<unk>"))
 my_tokenizer.normalizer = normalizers.Sequence([StripAccents(), Replace(" ", "Ä")])
 my_tokenizer.pre_tokenizer = PreTokenizer.custom(MyTokenizer())
@@ -116,8 +116,8 @@ def generate_data(file, save_dir, file_val):
 
 
 def main():
-    path = "/root/data/qm_data/issta2022/data/pkl/"
-    save_path = "/root/data/qm_data/issta2022/data/pkl/vulroberta"
+    path = "./data/pkl/"
+    save_path = "./data/pkl/vulroberta"
     for dataset_type in["original_dataset", "mutation_dataset"]:
         for file_val in ["ffmpeg", "qemu", "reveal"]:
             # generate_data(os.path.join(path, dataset_type, file_val), os.path.join(save_path, dataset_type, file_val), file_val)

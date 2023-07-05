@@ -39,7 +39,7 @@ class myCNN(nn.Module):
     def __init__(self, EMBED_SIZE, EMBED_DIM):
         super(myCNN,self).__init__()
         
-        pretrained_weights = RobertaModel.from_pretrained('/root/data/qm_data/VulBERTa/models/VulBERTa/').embeddings.word_embeddings.weight
+        pretrained_weights = RobertaModel.from_pretrained('../VulBERTa/models/VulBERTa/').embeddings.word_embeddings.weight
 
         self.embed = nn.Embedding.from_pretrained(pretrained_weights,
                                                   freeze=True,

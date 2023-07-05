@@ -10,9 +10,9 @@ from functools import partial
 
 def parse_options():
     parser = argparse.ArgumentParser(description='Image-based Vulnerability Detection.')
-    parser.add_argument('-i', '--input', help='The input dir path of pdg dataset, including a set of .dot files.', default="/root/data/qm_data/issta2022/data/joren/pdgs/original_dataset/reveal/")
-    parser.add_argument('-o', '--out', help='The output dir path of image dataset, to save a set of .pkl files.', default="/root/data/qm_data/issta2022/data/pkl/vulcnn/original_dataset/reveal/")
-    parser.add_argument('-m', '--model', help='The model trained in Step 3.', default="/root/data/qm_data/issta2022/data/sent2vec_model/ori_data_model.bin")
+    parser.add_argument('-i', '--input', help='The input dir path of pdg dataset, including a set of .dot files.', default="../data/joren/pdgs/original_dataset/reveal/")
+    parser.add_argument('-o', '--out', help='The output dir path of image dataset, to save a set of .pkl files.', default="../data/pkl/vulcnn/original_dataset/reveal/")
+    parser.add_argument('-m', '--model', help='The model trained in Step 3.', default="../data/sent2vec_model/ori_data_model.bin")
     args = parser.parse_args()
     return args
 
@@ -90,10 +90,10 @@ def main(dir, path = "sub_mutation_dataset"):
     # dir_name = args.input
     # out_path = args.out
     # trained_model_path = args.model
-    dir_name = "/root/data/qm_data/issta2022/data/joren/new_pdgs/" + path + "/" + dir
-    out_path = "/root/data/qm_data/issta2022/data/joren/vulcnn_seq_s2v_2/" + path + "/" + dir
-    # trained_model_path = "/root/data/qm_data/issta2022/data/sent2vec_model/sub_data_model.bin"
-    trained_model_path = "/root/data/qm_data/issta2022/data/sent2vec_model/sub_mut_data_model.bin"
+    dir_name = "../data/joren/new_pdgs/" + path + "/" + dir
+    out_path = "../data/joren/vulcnn_seq_s2v_2/" + path + "/" + dir
+    # trained_model_path = "../data/sent2vec_model/sub_data_model.bin"
+    trained_model_path = "../data/sent2vec_model/sub_mut_data_model.bin"
     
     global sent2vec_model
     sent2vec_model = sent2vec.Sent2vecModel()

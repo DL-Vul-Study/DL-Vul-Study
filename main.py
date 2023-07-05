@@ -565,8 +565,8 @@ def save_ggnn(model, dataset, save_path):
 def reveal_save_ggnn(filename):
     input_dir = "./data/pkl/devign/sub_mutation_dataset/" + filename
     # input_dir = "./data/pkl/devign/sub_original_dataset/" + filename
-    save_path = "/root/data/qm_data/issta2022/data/devign&reveal/Reveal-Recurrence-main/Vuld_SySe/save_ggnn/sub_mutation_dataset/"+ filename
-    # save_path = "/root/data/qm_data/issta2022/data/devign&reveal/Reveal-Recurrence-main/Vuld_SySe/save_ggnn/sub_original_dataset/"+ filename
+    save_path = "./data/devign&reveal/Reveal-Recurrence-main/Vuld_SySe/save_ggnn/sub_mutation_dataset/"+ filename
+    # save_path = "./data/devign&reveal/Reveal-Recurrence-main/Vuld_SySe/save_ggnn/sub_original_dataset/"+ filename
     if not os.path.exists(save_path): os.makedirs(save_path)
     # processed_data_path = os.path.join(input_dir, 'nvd_devign_2d_.bin')
     processed_data_path = os.path.join(input_dir, filename + '.bin')
